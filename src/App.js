@@ -200,7 +200,7 @@ function App() {
                           <img src="/assets/images/icon-complete.svg" alt="completed" />
                           <h3 className="text-2xl">THANK YOU!</h3>
                           <p className="mb-5">We've added your card details</p>
-                          <button className="confirm-btn" onClick={()=>{setStage(1)}}>Confirm</button>
+                          <button className="confirm-btn" onClick={()=>{window.location.reload()}}>Done</button>
                       </div>
                   }
               </div>
