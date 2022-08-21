@@ -30,18 +30,16 @@ input:focus-visible{
 }
 
 .card-front{
-    @apply absolute top-32 rounded-xl ml-3 mr-auto w-[350px] lg:w-[430px];
+    @apply absolute top-32 lg:top-56 rounded-xl left-3 lg:left-28 mr-auto w-[350px] lg:w-[430px] h-[230px];
     background: url("../public/assets/images/bg-card-front.png") no-repeat center;
     background-size: cover;
-    height: 230px;
     box-shadow: -30px 30px 120px -10px rgba(0, 0, 0, 0.56);
 }
 
 .card-back{
-    @apply absolute lg:top-[400px] top-3 rounded-xl ml-16 w-[350px] lg:w-[430px];
+    @apply absolute lg:top-[500px] top-3 rounded-xl left-16 lg:left-44 w-[350px] lg:w-[430px] h-[230px];
     background: url("../public/assets/images/bg-card-back.png") no-repeat center;
     background-size: cover;
-    height: 230px;
     box-shadow: -30px 30px 120px -10px rgba(0, 0, 0, 0.56);
 }
 
@@ -51,7 +49,7 @@ input:focus-visible{
 }
 
 .card-info-container{
-    @apply w-full lg:w-80 px-5 mx-auto mt-20
+    @apply w-full md:w-80 px-5 mx-auto mt-20
 }
 
 .form-group{
@@ -60,7 +58,6 @@ input:focus-visible{
 
 .form-group input{
     @apply w-full rounded py-1 px-4;
-    border: 1px solid var(--light-grayish-violet);
     margin: 5px 0 !important;
 }
 
@@ -68,12 +65,33 @@ input:focus-visible{
     font-size: 14px;
 }
 
+.form-control{
+    border: 1px solid var(--light-grayish-violet);
+}
+
+.form-control:focus-within{
+    border: 1px solid var(--very-dark-violet);
+}
+
+.form-control-error{
+    @apply border border-red-500;
+}
+
 .confirm-btn{
     @apply w-full rounded text-white py-2 my-3;
     background: var(--very-dark-violet);
 }
 
+.btn-disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 .card-number{
     @apply absolute bottom-14 lg:text-[25px];
     letter-spacing: 5px;
+}
+
+.confirmation-container p{
+    color: var(--dark-grayish-violet);
 }
