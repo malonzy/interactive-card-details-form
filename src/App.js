@@ -7,7 +7,7 @@ function App() {
     const [expM,setExpM] = useState('')
     const [expY,setExpY] = useState('')
     const [cvc,setCvc] = useState('')
-    const [stage,setStage] = useState(2)
+    const [stage,setStage] = useState(1)
 
     const [cardNumErr,setCardNumErr] = useState('')
     const [holderNameErr,setHolderNameErr] = useState('')
@@ -118,10 +118,20 @@ function App() {
             alert('Check errors')
             return null
         }
-
         setStage(stage + 1)
-
     }
+
+    useEffect(()=>{
+        if (expM.length === 2){
+            document.querySelector('#expYY').focus()
+        }
+    },[expM])
+
+    useEffect(()=>{
+        if (expY.length === 2){
+            document.querySelector('#cvc').focus()
+        }
+    },[expY])
 
   return (
     <div className="absolute w-full h-full m-0 block lg:grid lg:grid-cols-4">
