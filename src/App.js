@@ -4,6 +4,11 @@ function App() {
   return (
     <div className="absolute w-full h-full m-0 block lg:grid lg:grid-cols-4">
         <div className="blurry-col">
+            <div className="card-back text-white">
+                <div className="h-full relative">
+                    <p>000</p>
+                </div>
+            </div>
             <div className="card-front p-5 text-white">
                 <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-white"/>
@@ -15,11 +20,6 @@ function App() {
                 <div className="flex justify-between absolute bottom-5 w-10/12 mx-auto">
                     <p className="uppercase text-sm">Jane Appleseed</p>
                     <p className="text-xs">00/00</p>
-                </div>
-            </div>
-            <div className="card-back text-white">
-                <div className="h-full relative">
-                    <p>000</p>
                 </div>
             </div>
         </div>

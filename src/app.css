@@ -555,12 +555,12 @@ video {
   position: absolute;
 }
 
-.bottom-5{
-  bottom: 1.25rem;
+.relative{
+  position: relative;
 }
 
-.col-span-3{
-  grid-column: span 3 / span 3;
+.bottom-5{
+  bottom: 1.25rem;
 }
 
 .m-0{
@@ -702,11 +702,11 @@ input:focus-visible{
 
 .blurry-col{
   position: relative;
-  height: 14rem;
+  height: 18rem;
   width: 100%;
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .blurry-col{
     height: 100%;
   }
@@ -720,42 +720,73 @@ input:focus-visible{
 .card-front{
   position: absolute;
   top: 8rem;
-  left: 7rem;
+  margin-left: 0.75rem;
+  margin-right: auto;
+  width: 350px;
   border-radius: 0.75rem;
+}
+
+@media (min-width: 1024px){
+  .card-front{
+    width: 430px;
+  }
+}
+
+.card-front{
   background: url("../public/assets/images/bg-card-front.png") no-repeat center;
   background-size: cover;
-  width:430px;
   height: 230px;
   box-shadow: -30px 30px 120px -10px rgba(0, 0, 0, 0.56);
 }
 
 .card-back{
   position: absolute;
-  top: 24rem;
-  left: 11rem;
+  top: 0.75rem;
+  margin-left: 4rem;
+  width: 350px;
   border-radius: 0.75rem;
+}
+
+@media (min-width: 1024px){
+  .card-back{
+    top: 400px;
+    width: 430px;
+  }
+}
+
+.card-back{
   background: url("../public/assets/images/bg-card-back.png") no-repeat center;
   background-size: cover;
-  width:430px;
   height: 230px;
   box-shadow: -30px 30px 120px -10px rgba(0, 0, 0, 0.56);
 }
 
 .card-back p{
-  position: relative;
-  top: 300px;
+  position: absolute;
+  right: 20px;
+}
+
+@media (min-width: 1024px){
+  .card-back p{
+    right: 50px;
+  }
+}
+
+.card-back p{
+  top: 100px;
 }
 
 .card-info-container{
-  margin-left: 6rem;
-  margin-right: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
   width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .card-info-container{
-    margin-left: auto;
-    margin-right: auto;
     width: 20rem;
   }
 }
@@ -795,16 +826,28 @@ input:focus-visible{
 .card-number{
   position: absolute;
   bottom: 3.5rem;
-  letter-spacing: 5px;
-  font-size: 25px;
 }
 
-@media (min-width: 768px){
-  .md\:grid{
+@media (min-width: 1024px){
+  .card-number{
+    font-size: 25px;
+  }
+}
+
+.card-number{
+  letter-spacing: 5px;
+}
+
+@media (min-width: 1024px){
+  .lg\:col-span-3{
+    grid-column: span 3 / span 3;
+  }
+
+  .lg\:grid{
     display: grid;
   }
 
-  .md\:grid-cols-4{
+  .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
