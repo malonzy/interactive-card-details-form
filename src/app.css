@@ -555,12 +555,12 @@ video {
   position: absolute;
 }
 
-.bottom-5{
-  bottom: 1.25rem;
+.relative{
+  position: relative;
 }
 
-.col-span-3{
-  grid-column: span 3 / span 3;
+.bottom-5{
+  bottom: 1.25rem;
 }
 
 .m-0{
@@ -570,6 +570,10 @@ video {
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-5{
+  margin-bottom: 1.25rem;
 }
 
 .block{
@@ -600,6 +604,10 @@ video {
   width: 100%;
 }
 
+.w-1\/2{
+  width: 50%;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -612,12 +620,12 @@ video {
   width: 83.333333%;
 }
 
-.w-1\/2{
-  width: 50%;
-}
-
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flex-col{
+  flex-direction: column;
 }
 
 .items-center{
@@ -638,6 +646,10 @@ video {
 
 .gap-2{
   gap: 0.5rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
 }
 
 .rounded-full{
@@ -672,6 +684,11 @@ video {
   line-height: 1rem;
 }
 
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .uppercase{
   text-transform: uppercase;
 }
@@ -679,6 +696,11 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-500{
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 :root{
@@ -702,11 +724,11 @@ input:focus-visible{
 
 .blurry-col{
   position: relative;
-  height: 14rem;
+  height: 18rem;
   width: 100%;
 }
 
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .blurry-col{
     height: 100%;
   }
@@ -720,42 +742,76 @@ input:focus-visible{
 .card-front{
   position: absolute;
   top: 8rem;
-  left: 7rem;
+  left: 0.75rem;
+  margin-right: auto;
+  height: 230px;
+  width: 350px;
   border-radius: 0.75rem;
+}
+
+@media (min-width: 1024px){
+  .card-front{
+    top: 14rem;
+    left: 7rem;
+    width: 430px;
+  }
+}
+
+.card-front{
   background: url("../public/assets/images/bg-card-front.png") no-repeat center;
   background-size: cover;
-  width:430px;
-  height: 230px;
   box-shadow: -30px 30px 120px -10px rgba(0, 0, 0, 0.56);
 }
 
 .card-back{
   position: absolute;
-  top: 24rem;
-  left: 11rem;
+  top: 0.75rem;
+  right: 0.75rem;
+  height: 230px;
+  width: 350px;
   border-radius: 0.75rem;
+}
+
+@media (min-width: 1024px){
+  .card-back{
+    top: 500px;
+    left: 11rem;
+    width: 430px;
+  }
+}
+
+.card-back{
   background: url("../public/assets/images/bg-card-back.png") no-repeat center;
   background-size: cover;
-  width:430px;
-  height: 230px;
   box-shadow: -30px 30px 120px -10px rgba(0, 0, 0, 0.56);
 }
 
 .card-back p{
-  position: relative;
-  top: 300px;
+  position: absolute;
+  right: 20px;
+}
+
+@media (min-width: 1024px){
+  .card-back p{
+    right: 50px;
+  }
+}
+
+.card-back p{
+  top: 100px;
 }
 
 .card-info-container{
-  margin-left: 6rem;
-  margin-right: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
   width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 @media (min-width: 768px){
   .card-info-container{
-    margin-left: auto;
-    margin-right: auto;
     width: 20rem;
   }
 }
@@ -772,12 +828,25 @@ input:focus-visible{
   padding-bottom: 0.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border: 1px solid var(--light-grayish-violet);
   margin: 5px 0 !important;
 }
 
 .form-group label{
   font-size: 14px;
+}
+
+.form-control{
+  border: 1px solid var(--light-grayish-violet);
+}
+
+.form-control:focus-within{
+  border: 1px solid var(--very-dark-violet);
+}
+
+.form-control-error{
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .confirm-btn{
@@ -792,19 +861,44 @@ input:focus-visible{
   background: var(--very-dark-violet);
 }
 
+.btn-disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .card-number{
   position: absolute;
   bottom: 3.5rem;
-  letter-spacing: 5px;
-  font-size: 25px;
 }
 
-@media (min-width: 768px){
-  .md\:grid{
+@media (min-width: 1024px){
+  .card-number{
+    font-size: 25px;
+  }
+}
+
+.card-number{
+  letter-spacing: 5px;
+}
+
+.confirmation-container p{
+  color: var(--dark-grayish-violet);
+}
+
+@media (min-width: 1024px){
+  .lg\:col-span-3{
+    grid-column: span 3 / span 3;
+  }
+
+  .lg\:grid{
     display: grid;
   }
 
-  .md\:grid-cols-4{
+  .lg\:w-full{
+    width: 100%;
+  }
+
+  .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
